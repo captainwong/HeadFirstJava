@@ -4,8 +4,7 @@
             "type": "java",
             "name": "CodeLens (Launch) - Hello",
             "request": "launch",
-            "mainClass": "Hello",
-            "projectName": "Java_e849b6fc"
+            "mainClass": "Hello"
         }
     ]
 }
