@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DotComBust",
+            "request": "launch",
+            "mainClass": "DotComBust"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BeerSong",
             "request": "launch",
             "mainClass": "BeerSong"
