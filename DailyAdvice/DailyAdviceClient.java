@@ -5,9 +5,9 @@ import java.net.*;
  * DailyAdviceClient
  */
 public class DailyAdviceClient {
-    public void go() {
+    public void go(String ip, int port) {
         try {
-            Socket socket = new Socket("127.0.0.1", 4242);
+            Socket socket = new Socket(ip, port);
             InputStreamReader streamReader = new InputStreamReader(socket.getInputStream());
             BufferedReader reader = new BufferedReader(streamReader);
             String advice = reader.readLine();
@@ -19,7 +19,14 @@ public class DailyAdviceClient {
     }
 
     public static void main(String[] args) {
+        String ip = "127.0.0.1";
+        int port = 4242;
+        if (args.length > 1) {
+            ip = args[0];
+            port = Integer.parseInt(args[1]);
+        }
+        
         DailyAdviceClient client = new DailyAdviceClient();
-        client.go();
+        client.go(ip, port);
     }
 }

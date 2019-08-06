@@ -10,9 +10,9 @@ public class DailyAdviceServer {
             "Just for today, be honest. Tell your boss what you *really* think",
             "You might want to rethink that haircut."};
 
-    public void go() {
+    public void go(int port) {
         try {
-            ServerSocket serverSocket = new ServerSocket(4242);
+            ServerSocket serverSocket = new ServerSocket(port);
             while (true) {
                 Socket socket = serverSocket.accept();
                 PrintWriter writer = new PrintWriter(socket.getOutputStream());
@@ -32,7 +32,12 @@ public class DailyAdviceServer {
     }
 
     public static void main(String[] args) {
+        int port = 4242;
+        if (args.length > 0) {
+            port = Integer.parseInt(args[0]);
+        }
+        
         DailyAdviceServer server = new DailyAdviceServer();
-        server.go();
+        server.go(port);
     }
 }
