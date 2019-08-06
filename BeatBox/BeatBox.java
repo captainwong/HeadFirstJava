@@ -133,7 +133,7 @@ public class BeatBox {
         track.add(makeEvent(192,9,1,0,15));
         try{
             sequencer.setSequence(sequence);
-            sequencer.setLoopCount(sequencer.LOOP_CONTINUOUSLY);
+            sequencer.setLoopCount(Sequencer.LOOP_CONTINUOUSLY);
             sequencer.start();
             sequencer.setTempoInBPM(120);
         }catch(Exception e){
@@ -179,6 +179,7 @@ public class BeatBox {
                 FileOutputStream fileOutputStream = new FileOutputStream(new File("Checkbox.ser"));
                 ObjectOutputStream os = new ObjectOutputStream(fileOutputStream);
                 os.writeObject(checkBoxState);
+                os.close();
             }catch(Exception e){
                 e.printStackTrace();
             }
@@ -192,6 +193,7 @@ public class BeatBox {
                 FileInputStream fileInputStream = new FileInputStream(new File("Checkbox.ser"));
                 ObjectInputStream is = new ObjectInputStream(fileInputStream);
                 checkBoxState = (boolean[])is.readObject();
+                is.close();
                 for(int i =0;i<256;i++){
                     JCheckBox checkBox = (JCheckBox)checkBoxs.get(i);
                     checkBox.setSelected(checkBoxState[i]);
