@@ -11,9 +11,8 @@ public class DailyAdviceServer {
             "You might want to rethink that haircut."};
 
     public void go(int port) {
-        ServerSocket serverSocket = null;
         try {
-            serverSocket = new ServerSocket(port);
+            ServerSocket serverSocket = new ServerSocket(port);
             while (true) {
                 Socket socket = serverSocket.accept();
                 PrintWriter writer = new PrintWriter(socket.getOutputStream());
@@ -24,10 +23,6 @@ public class DailyAdviceServer {
             }
         } catch (IOException ex) {
             ex.printStackTrace();
-        } finally {
-            if (serverSocket) {
-                serverSocket.close();
-            }
         }
     }
 

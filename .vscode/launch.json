@@ -2,6 +2,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ChatServer",
+            "request": "launch",
+            "mainClass": "ChatServer"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ChatClient",
+            "request": "launch",
+            "mainClass": "ChatClient",
+            "args": "192.168.1.130 4242"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BeatBox",
             "request": "launch",
             "mainClass": "BeatBox"
