@@ -11,7 +11,7 @@
             "name": "CodeLens (Launch) - ChatClient",
             "request": "launch",
             "mainClass": "ChatClient",
-            "args": "192.168.1.130 4242"
+            "args": "hbwechatserver.com 7893"
         },
         {
             "type": "java",
