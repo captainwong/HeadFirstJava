@@ -46,8 +46,9 @@ public class ChatServer {
 
     public void go(int port) {
         clientOutputStreams = new ArrayList<>();
+        ServerSocket serverSocket = null;
         try {
-            ServerSocket serverSocket = new ServerSocket(port);
+            serverSocket = new ServerSocket(port);
             while (true) {
                 Socket socket = serverSocket.accept();
                 PrintWriter writer = new PrintWriter(socket.getOutputStream());
@@ -60,7 +61,9 @@ public class ChatServer {
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
-            serverSocket.close();
+            if (serverSocket) {
+                serverSocket.close();
+            }
         }
     }
 

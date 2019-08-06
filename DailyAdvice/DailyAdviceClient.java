@@ -6,8 +6,9 @@ import java.net.*;
  */
 public class DailyAdviceClient {
     public void go(String ip, int port) {
+        Socket socket = null;
         try {
-            Socket socket = new Socket(ip, port);
+            socket = new Socket(ip, port);
             InputStreamReader streamReader = new InputStreamReader(socket.getInputStream());
             BufferedReader reader = new BufferedReader(streamReader);
             String advice = reader.readLine();
@@ -16,7 +17,9 @@ public class DailyAdviceClient {
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
-            serverSocket.close();
+            if (socket) {
+                socket.close();
+            }
         }
     }
 
