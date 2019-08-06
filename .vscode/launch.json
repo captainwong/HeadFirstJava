@@ -2,6 +2,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BeatBox",
+            "request": "launch",
+            "mainClass": "BeatBox"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MusicPlayer",
+            "request": "launch",
+            "mainClass": "MusicPlayer",
+            "args": "102 30"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DotComBust",
             "request": "launch",
             "mainClass": "DotComBust"
