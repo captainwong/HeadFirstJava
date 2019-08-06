@@ -11,7 +11,7 @@ public class DailyAdviceClient {
             InputStreamReader streamReader = new InputStreamReader(socket.getInputStream());
             BufferedReader reader = new BufferedReader(streamReader);
             String advice = reader.readLine();
-            System.out.println("Today you sould: " + advice);
+            System.out.println(advice);
             reader.close();
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -25,7 +25,7 @@ public class DailyAdviceClient {
             ip = args[0];
             port = Integer.parseInt(args[1]);
         }
-        
+
         DailyAdviceClient client = new DailyAdviceClient();
         client.go(ip, port);
     }
