@@ -15,6 +15,8 @@ public class DailyAdviceClient {
             reader.close();
         } catch (IOException ex) {
             ex.printStackTrace();
+        } finally {
+            serverSocket.close();
         }
     }
 

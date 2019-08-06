@@ -23,6 +23,8 @@ public class DailyAdviceServer {
             }
         } catch (IOException ex) {
             ex.printStackTrace();
+        } finally {
+            serverSocket.close();
         }
     }
 
@@ -36,7 +38,7 @@ public class DailyAdviceServer {
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         }
-        
+
         DailyAdviceServer server = new DailyAdviceServer();
         server.go(port);
     }
