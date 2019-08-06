@@ -7,9 +7,9 @@ import javax.sound.midi.*;
 public class MusicPlayer {
     public static void main(String[] args) {
         MusicPlayer player = new MusicPlayer();
-        if(args.length < 2){
+        if (args.length < 2) {
             System.out.println("Don't forget the instrument and note args");
-        }else{
+        } else {
             int instrument = Integer.parseInt(args[0]);
             int note = Integer.parseInt(args[1]);
             player.play(instrument, note);

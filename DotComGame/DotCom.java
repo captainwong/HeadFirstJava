@@ -12,7 +12,7 @@ public class DotCom {
         name = n;
     }
 
-    public DotCom(String n){
+    public DotCom(String n) {
         name = n;
     }
 

@@ -24,7 +24,7 @@ public class GameHelper {
 
     public ArrayList<String> placeDotCom(int comSize) {
         ArrayList<String> alphaCells = new ArrayList<>();
-        //String[] alphaCoords = new String[comSize];
+        // String[] alphaCoords = new String[comSize];
         String temp = null;
         int[] coords = new int[comSize];
         int attempts = 0;
@@ -63,14 +63,14 @@ public class GameHelper {
         int x = 0;
         int row = 0;
         int col = 0;
-        while(x < comSize){
+        while (x < comSize) {
             grid[coords[x]] = 1;
-            row = (int)(coords[x] / gridLength);
+            row = (int) (coords[x] / gridLength);
             col = coords[x] % gridLength;
             temp = String.valueOf(alphabet.charAt(col));
             alphaCells.add(temp.concat(Integer.toString(row)));
             x++;
-            System.out.println("coord " + x + "=" + alphaCells.get(x-1));
+            System.out.println("coord " + x + "=" + alphaCells.get(x - 1));
         }
 
         return alphaCells;
