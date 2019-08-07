@@ -17,7 +17,8 @@
             "type": "java",
             "name": "CodeLens (Launch) - BeatBox",
             "request": "launch",
-            "mainClass": "BeatBox"
+            "mainClass": "BeatBox",
+            "args": "Jack hbwechatserver.com 7893"
         },
         {
             "type": "java",
